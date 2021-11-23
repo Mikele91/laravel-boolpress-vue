@@ -1,15 +1,19 @@
 <template>
     <section>
-        <h2>Ttti i post</h2>
-        <ul>
-            <li v-for="post in posts" :key="post.id"> {{post.title}}</li>
-        </ul>
+        <h2>Tutti i post</h2>
+        <div class="posts">
+            <PostCard v-for="post in posts" :key="post.id" :data ="post"/>
+        </div>
     </section>
 </template>
 
 <script>
+import PostCard from './PostCard.vue';
 export default {
     name:'Posts',
+    components:{
+        PostCard
+    },
     data(){
         return{
             posts:[],
@@ -28,3 +32,24 @@ export default {
     }
 }
 </script>
+
+
+
+<style lang="scss" scoped>
+    section{
+        
+       background-color: black;
+       h2{
+           color: rgb(255, 123, 0);
+           text-align: center;
+       }
+        .posts{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 1200px;
+            margin :auto
+        }
+        
+    }
+</style>
