@@ -14,4 +14,5 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js') //backoffice
     .js('resources/js/guest/front.js', 'public/js')//frontoffice
     .sass('resources/sass/front.scss', 'public/css')//frontoffice
-    .sass('resources/sass/app.scss', 'public/css');//backoffice
+    .sass('resources/sass/app.scss', 'public/css')//backoffice
+    .copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts');
